@@ -1,0 +1,112 @@
+# Import
+from random import *
+
+# Database
+all_items = ['Roller Skating', 'Ice Skating', 'Picnic at a Park', 'Picnic at a Lake', 'Picnic at the Beach', 
+             'Picnic at a Playground', 'Picnic At Night', 'Arcade', 'Beach Day', 'Make Breakfast Together', 
+             'Make Lunch Together', 'Make Dinner Together', 'Drive in Movie', 'Escape Room', 'Go to the Fair',
+             'Mini-Golf', 'Top Golf', 'Horseback Riding', 'Ice Cream', 'Laser Tag', 
+             'Airsoft', 'Paintball', 'Star Watching', 'Amusement Park', 'Water Park', 
+             'Car Concert', 'Concert', 'Mall', 'Online Shopping for each other within $__', 'Thrifting',
+             'Go on a Run', 'Go on a Walk', 'Work out Together', 'Play baseball (catch) at a park', 'Play tennis together',
+             'Go Skateboarding (can record too)', 'Go to the Movies', 'Take a Day Trip _____', 'Kayaking', 'Paddle Boarding',
+             'Canoeing', 'Lake Fishing', 'Ocean Fishing', 'Hammock and read together', 'Slow dance in a Parking Lot',
+             'Photoshoot', 'Make TikToks', 'Go on a Hike', 'Listen to and Rate Songs', 'Watch the Sunrise / Sunset',
+             'Try Not to Laugh Challenge', 'Go to a Pet Store', 'Bake a Cake', 'Fancy Dinner', 'Go to a store and pick out outfits for each other',
+             'Go swimming in a Pool', 'Go swimming in a Hot Tub', 'Ride bikes', 'Paint Rocks', 'Snack Run',
+             'Painting Class', 'Paint on Two Canvases, Switch every 5 minutes for 30 minutes', 'Photoshoot on Disposable Camera', 'Tye Dye Shirts', 'Play Board Games',
+             'Do a Puzzle', 'Talk (with prompts)', 'Do a podcast for ourselves', 'Go to a parking garage, listen to music, and watch the sunset if possible', 'Get Slushies',
+             'Dye each other’s hair', 'Cut each other’s hair', 'Face Masks','Play "We’re not really strangers"', 'Couples’ Massage',
+             'A Spa Day', 'Recreate Our First (or Another) Date', 'Have a Trivia Night about each other', 'Organize a Scavenger Hunt with the Places you Have Special Memories at', 'Stay at a Bed and Breakfast', 'Take a Spontaneous Road Trip',
+             'Ski Trip', 'Snowboard Trip', 'Aquarium', 'Aquarium of the Pacific Night Dive', 'See Floating Lights',
+             'Go for a Drive Around','Make a (specific) shared playlist', 'Make a Shared Photo Album (add twice per day)', 'Date at the California Science Center', 'Date at the Huntington Library'
+             'Go to the Sherman Library & Gardens', 'Lantern Festival', 'Pottery Date', 'Bookstore / Library Date', 'Museum Date',
+             'Dancing in the Rain', 'Roasting S’mores', 'Watching Fireworks', 'Rock Climbing', 'Random Adventure!',
+             'Buy Snacks and Watch a Movie at Home']
+
+# Can be completed in under an hour
+quick_items = ['Make Breakfast Together', 'Make Lunch Together', 'Make Dinner Together', 'Make Snacks Together', 'Ice Cream', 
+               'Car Concert', 'Online Shopping for each other within $__', 'Go on a Run', 'Go on a Walk', 'Work out Together', 
+               'Play baseball (catch) at a park', 'Play tennis together', 'Go Skateboarding (can record too)', 'Hammock and read together', 'Slow dance in a Parking Lot', 
+               'Photoshoot', 'Make TikToks', 'Listen to and Rate Songs', 'Watch the Sunrise / Sunset', 'Try Not to Laugh Challenge', 
+               'Go to a Pet Store', 'Bake a Cake', 'Go to a store and pick out outfits for each other', 'Go swimming in a Pool', 'Go swimming in a Hot Tub', 
+               'Ride bikes', 'Paint Rocks', 'Snack Run', 'Paint on Two Canvases, Switch every 5 minutes for 30 minutes', 'Photoshoot on Disposable Camera', 
+               'Play Board Games', 'Do a Puzzle', 'Talk (with prompts)', 'Do a podcast for ourselves', 'Go to a parking garage, listen to music, and watch the sunset if possible', 
+               'Get Slushies', 'Face Masks','Play "We’re not really strangers"', 'Meowy Spa Day', 'Recreate a Date', 
+               'Go for a Drive Around', 'Make a (specific) shared playlist', 'Make a Shared Photo Album (add twice per day)', 'Bookstore / Library Date', 'Dancing in the Rain', 
+               'Roasting S’mores', 'Buy Snacks and Watch a Show at Home', 'Random Adventure!']
+
+# Can be completed in 1-3 hours
+hour_items = ['Roller Skating', 'Ice Skating', 'Picnic at a Park', 'Picnic at a Lake', 'Picnic at the Beach', 
+              'Picnic at a Playground', 'Picnic At Night', 'Arcade', 'Make Breakfast Together', 'Make Lunch Together', 
+              'Make Dinner Together', 'Drive in Movie', 'Escape Room', 'Mini-Golf', 'Top Golf', 
+              'Horseback Riding', 'Ice Cream', 'Laser Tag', 'Star Watching', 'Car Concert', 
+              'Mall', 'Online Shopping for each other within $__', 'Thrifting', 'Go on a Run', 'Go on a Walk', 
+              'Work out Together', 'Play baseball (catch) at a park', 'Play tennis together', 'Go Skateboarding (can record too)', 'Go to the Movies', 
+              'Kayaking', 'Paddle Boarding', 'Canoeing', 'Lake Fishing', 'Ocean Fishing', 
+              'Hammock and read together', 'Slow dance in a Parking Lot', 'Photoshoot', 'Make TikToks', 'Go on a Hike', 
+              'Listen to and Rate Songs', 'Watch the Sunrise / Sunset', 'Try Not to Laugh Challenge', 'Go to a Pet Store', 
+              'Bake a Cake', 'Fancy Dinner', 'Go to a store and pick out outfits for each other', 'Go swimming in a Pool', 'Go swimming in a Hot Tub', 
+              'Ride bikes', 'Paint Rocks', 'Snack Run', 'Painting Class', 'Paint on Two Canvases, Switch every 5 minutes for 30 minutes', 
+              'Photoshoot on Disposable Camera', 'Tye Dye Shirts', 'Play Board Games', 'Do a Puzzle', 'Talk (with prompts)', 
+              'Do a podcast for ourselves', 'Go to a parking garage, listen to music, and watch the sunset if possible', 'Get Slushies', 'Dye each other’s hair', 'Cut each other’s hair', 
+              'Face Masks','Play "We’re not really strangers"', 'Couples’ Massage', 'A Spa Day', 'Recreate Our First (or Another) Date', 
+              'Have a Trivia Night about each other', 'Go for a Drive Around','Make a (specific) shared playlist', 'Make a Shared Photo Album (add twice per day)', 'Pottery Date', 
+              'Bookstore / Library Date', 'Dancing in the Rain', 'Roasting S’mores', 'Watching Fireworks', 'Rock Climbing', 
+              'Buy Snacks and Watch a Show at Home', 'Buy Snacks and Watch a Movie at Home', 'Random Adventure!']
+
+# Can be completed in 4-6 hours
+half_day_items = ['Picnic at the Beach', 'Arcade', 'Go to the Fair', 'Airsoft', 'Paintball', 
+                  'Amusement Park', 'Water Park', 'Concert', 'Mall', 'Online Shopping for each other within $__', 
+                  'Thrifting', 'Kayaking', 'Paddle Boarding', 'A Spa Day', 'Organize a Scavenger Hunt with the Places you Have Special Memories at',
+                  'Aquarium', 'Aquarium of the Pacific Night Dive', 'See Floating Lights', 'Date at the California Science Center', 'Date at the Huntington Library',
+                  'Go to the Sherman Library & Gardens', 'Lantern Festival', 'Pottery Date', 'Museum Date', 'Rock Climbing',
+                  'Random Adventure!']
+
+# Can be completed in 6-12 hours
+day_items = ['Beach Day', 'Go to the Fair', 'Airsoft', 'Paintball', 'Amusement Park', 
+             'Water Park', 'Take a Day Trip ____', 'Canoeing', 'Lake Fishing', 'Ocean Fishing',
+             'Organize a Scavenger Hunt with the Places you Have Special Memories at', 'Aquarium', 'Aquarium of the Pacific Night Dive', 'See Floating Lights', 'Date at the California Science Center', 
+             'Date at the Huntington Library', 'Go to the Sherman Library & Gardens', 'Lantern Festival', 'Museum Date', 'Random Adventure!']
+
+# Can be completed in an overnight day or multiple days
+trip_items = ['Concert', 'Stay at a Bed and Breakfast', 'Take a Spontaneous Road Trip', 'Ski Trip', 'Snowboard Trip',
+              'See Floating Lights', 'Random Adventure!']
+
+# User Interaction
+print('What type of activity would you like? Please select the list you would like to pull from:', '\n',
+        'ALL', '\n',
+        'QUICK', '\n',
+        'HOUR', '\n',
+        'HALF DAY', '\n',
+        'DAY', '\n',
+        'TRIP')
+
+x = input()
+
+if x == 'ALL':
+    y = sample(all_items, 1)   # Pick a random item from the ALL list
+    print(y)
+
+if x == 'QUICK':
+    y = sample(quick_items, 1)   # Pick a random item from the QUICK list
+    print(y)
+
+if x == 'HOUR':
+    y = sample(hour_items, 1)   # Pick a random item from the HOUR list
+    print(y)
+
+if x == 'HALF DAY':
+    y = sample(half_day_items, 1)   # Pick a random item from the HOUR DAY list
+    print(y)
+
+if x == 'DAY':
+    y = sample(day_items, 1)   # Pick a random item from the DAY list
+    print(y)
+
+if x == 'TRIP':
+    y = sample(trip_items, 1)   # Pick a random item from the TRIP list
+    print(y)
+
+if x not in ('ALL', 'QUICK', 'HOUR', 'DAY', 'HALF DAY', 'TRIP'):
+    print("Try again. Please respond with one of the SIX options.")
